@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "fdea7fdc-29b2-43e5-b7dd-e36bc195fb4b",
+		"name": "Capstone Express ORM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36579204"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Đăng kí",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ho_ten\": \"Trí\",\r\n    \"email\": \"thothanhtri123@gmail.com\",\r\n    \"mat_khau\": \"123\",\r\n    \"tuoi\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}auth/dang-ki",
+							"host": [
+								"{{domain}}auth"
+							],
+							"path": [
+								"dang-ki"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Đăng nhập",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"thothanhtri123@gmail.com\",\r\n    \"mat_khau\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}auth/dang-nhap",
+							"host": [
+								"{{domain}}auth"
+							],
+							"path": [
+								"dang-nhap"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang chủ",
+			"item": [
+				{
+					"name": "Lấy danh sách hình ảnh",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}hinh_anh/lay-danh-sach-anh",
+							"host": [
+								"{{domain}}hinh_anh"
+							],
+							"path": [
+								"lay-danh-sach-anh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách hình ảnh theo tên",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}hinh_anh/lay-danh-sach-anh-theo-ten?ten_hinh=hinh_5",
+							"host": [
+								"{{domain}}hinh_anh"
+							],
+							"path": [
+								"lay-danh-sach-anh-theo-ten"
+							],
+							"query": [
+								{
+									"key": "ten_hinh",
+									"value": "hinh_5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang chi tiết hình ảnh",
+			"item": [
+				{
+					"name": "Lấy thông tin của ảnh và người tạo ảnh theo hinh_id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}hinh_anh/lay-thong-tin-anh/10",
+							"host": [
+								"{{domain}}hinh_anh"
+							],
+							"path": [
+								"lay-thong-tin-anh",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy thông tin bình luận theo hinh_id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}binh_luan/lay-thong-tin-binh-luan/6",
+							"host": [
+								"{{domain}}binh_luan"
+							],
+							"path": [
+								"lay-thong-tin-binh-luan",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kiểm tra lưu ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}luu_anh/kiem-tra-luu/13",
+							"host": [
+								"{{domain}}luu_anh"
+							],
+							"path": [
+								"kiem-tra-luu",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lưu bình luận",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hinh_id\": 6,\r\n  \"noi_dung\": \"ok good!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}binh_luan/luu-binh-luan",
+							"host": [
+								"{{domain}}binh_luan"
+							],
+							"path": [
+								"luu-binh-luan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang quản lí ảnh",
+			"item": [
+				{
+					"name": "Lấy thông tin người dùng",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}nguoi_dung/lay-thong-tin-nguoi-dung",
+							"host": [
+								"{{domain}}nguoi_dung"
+							],
+							"path": [
+								"lay-thong-tin-nguoi-dung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa hình ảnh",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}hinh_anh/xoa-anh/14",
+							"host": [
+								"{{domain}}hinh_anh"
+							],
+							"path": [
+								"xoa-anh",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy dánh sách ảnh đã lưu",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}hinh_anh/lay-danh-sach-anh-da-luu",
+							"host": [
+								"{{domain}}hinh_anh"
+							],
+							"path": [
+								"lay-danh-sach-anh-da-luu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách ảnh được tạo bởi người dùng ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}hinh_anh/lay-danh-sach-anh-da-tao",
+							"host": [
+								"{{domain}}hinh_anh"
+							],
+							"path": [
+								"lay-danh-sach-anh-da-tao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lưu ảnh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hinh_id\": 13\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}luu_anh/luu-anh",
+							"host": [
+								"{{domain}}luu_anh"
+							],
+							"path": [
+								"luu-anh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang thêm ảnh",
+			"item": [
+				{
+					"name": "Thêm hình ảnh mới",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ten_hinh",
+									"value": "luffy",
+									"type": "text"
+								},
+								{
+									"key": "mo_ta",
+									"value": "Đây là mô tả",
+									"type": "text"
+								},
+								{
+									"key": "hinh_anh",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}hinh_anh/them-anh",
+							"host": [
+								"{{domain}}hinh_anh"
+							],
+							"path": [
+								"them-anh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chỉnh sửa thông tin cá nhân",
+			"item": [
+				{
+					"name": "Chỉnh sửa thông tin cá nhân",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6NH0sImlhdCI6MTcyNTUzNzQxMiwiZXhwIjoxNzI1NTU1NDEyfQ.25zbF4buPDm9YyLIJQcShImYgPjKqG-0f5eD0I5e95Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"thothanhtri123@gmail.com\",\r\n  \"ho_ten\": \"Trí đẹp trai 2024\",\r\n  \"tuoi\": 55,\r\n  \"anh_dai_dien\": \"/images/trideptrai2024.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}nguoi_dung/chinh-sua-thong-tin-nguoi-dung",
+							"host": [
+								"{{domain}}nguoi_dung"
+							],
+							"path": [
+								"chinh-sua-thong-tin-nguoi-dung"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}
