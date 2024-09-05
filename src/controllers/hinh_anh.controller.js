@@ -77,10 +77,18 @@ const layThongTinHinhAnhVaNguoiTao = async (req, res) => {
 
 // Thêm hình ảnh mới
 const themHinhAnh = async (req, res) => {
-  const { ten_hinh, duong_dan, mo_ta } = req.body;
+  const { ten_hinh, mo_ta } = req.body;
   const nguoi_dung_id = req.user.userId; // Lấy userId từ token đã được giải mã
 
   try {
+    // Kiểm tra xem file có được upload không
+    if (!req.file) {
+      return responseData("", "Bạn phải upload một file ảnh.", 400, res);
+    }
+
+    const duong_dan = `/public/imgs/${req.file.filename}`; // Lấy đường dẫn của file đã upload
+
+    // Lưu thông tin ảnh vào cơ sở dữ liệu
     const newImage = {
       ten_hinh,
       duong_dan,

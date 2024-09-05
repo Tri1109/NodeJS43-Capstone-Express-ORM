@@ -9,6 +9,7 @@ import {
   xoaHinhAnh,
 } from "../controllers/hinh_anh.controller.js";
 import { middleWareToken } from "../config/jwt.js";
+import { upload } from "../config/upload.js";
 
 const hinh_anhRouter = express.Router();
 
@@ -30,7 +31,12 @@ hinh_anhRouter.get(
 );
 
 // Thêm hình ảnh mới
-hinh_anhRouter.post("/them-anh", middleWareToken, themHinhAnh);
+hinh_anhRouter.post(
+  "/them-anh",
+  middleWareToken,
+  upload.single("hinh_anh"),
+  themHinhAnh
+);
 
 // Xóa hình ảnh
 hinh_anhRouter.delete("/xoa-anh/:hinh_id", middleWareToken, xoaHinhAnh);
